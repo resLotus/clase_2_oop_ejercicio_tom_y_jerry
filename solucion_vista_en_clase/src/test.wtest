@@ -1,0 +1,23 @@
+import tomYJerry.*
+
+test "La velocidad se calcula bien" {
+	tom.energia(40)
+	assert.equals(9, tom.velocidad())
+}
+
+test "La velocidad de Tom cambia en funcion de su energia" {
+	tom.energia(20)
+	
+	assert.equals(7, tom.velocidad())
+	
+	tom.energia(40)
+	
+	assert.equals(9, tom.velocidad())
+}
+
+test "Tom siendo mas veloz puede atrapar a jerry" {
+	tom.energia(20)
+	jerry.peso(7)
+	
+	assert.that(tom.puedeAtraparA(jerry))
+}
